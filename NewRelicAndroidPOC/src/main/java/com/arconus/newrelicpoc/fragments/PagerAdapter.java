@@ -19,6 +19,10 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         // Return a DummySectionFragment (defined as a static inner class
         // below) with the page number as its lone argument.
+        if(position == 0) {
+            return new ApplicationsSelectionListFragment();
+        }
+
         Fragment fragment = new DummySectionFragment();
         Bundle args = new Bundle();
         args.putString(DummySectionFragment.ARG_SECTION_NUMBER, prefix + (position + 1));
@@ -41,7 +45,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return prefix + "SECTION 1";
+                return "APPLICATIONS LIST";
             case 1:
                 return prefix + "SECTION 2";
             case 2:

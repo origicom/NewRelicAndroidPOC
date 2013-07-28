@@ -15,7 +15,7 @@ public class NavDrawerSelectionDialog extends DialogFragment {
         Dialog dialog = new Dialog(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.list_selection_dialog_layout, null);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.list_selection_layout, null);
         ListView listView = (ListView) layout.findViewById(R.id.listView);
 
         listView.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, new String [] {
