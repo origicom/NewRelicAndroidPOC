@@ -49,7 +49,7 @@ public class MainActivity extends FragmentActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the app.
-        mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "A ");
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.content_frame);
@@ -145,8 +145,26 @@ public class MainActivity extends FragmentActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView parent, View view, int position, long id) {
-            NavDrawerSelectionDialog dialog = new NavDrawerSelectionDialog();
-            dialog.show(getFragmentManager(), "SelectionList");
+            switch(position) {
+                case 0:
+                    mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "Applications ");
+                    break;
+
+                case 1:
+                    mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "Servers ");
+                    break;
+
+                case 2:
+                    mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "Key Transactions ");
+                    break;
+
+                default:
+                    break;
+            }
+
+            mViewPager.setAdapter(mSectionsPagerAdapter);
+            mDrawerList.setItemChecked(position, true);
+            mDrawerLayout.closeDrawer(mDrawerList);
         }
     }
 }
