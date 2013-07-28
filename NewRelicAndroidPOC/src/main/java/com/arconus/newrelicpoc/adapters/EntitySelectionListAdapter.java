@@ -10,8 +10,8 @@ import com.arconus.newrelicpoc.R;
 
 import java.util.List;
 
-public class ApplicationsListAdapter extends ArrayAdapter<ApplicationsListDataOrb> {
-public ApplicationsListAdapter(Context context, int resource, List<ApplicationsListDataOrb> objects) {
+public class EntitySelectionListAdapter extends ArrayAdapter<EntitySelectionListDataOrb> {
+public EntitySelectionListAdapter(Context context, int resource, List<EntitySelectionListDataOrb> objects) {
         super(context, resource, objects);
 }
 
@@ -19,7 +19,7 @@ public ApplicationsListAdapter(Context context, int resource, List<ApplicationsL
     public View getView(int position, View convertView, ViewGroup parent) {
             View rowView = View.inflate(getContext(), R.layout.app_selection_list_item, null);
 
-        ApplicationsListDataOrb dataOrb = getItem(position);
+        EntitySelectionListDataOrb dataOrb = getItem(position);
 
         TextView title = (TextView) rowView.findViewById(R.id.ap_title);
         title.setText(dataOrb.title);

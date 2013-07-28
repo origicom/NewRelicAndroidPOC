@@ -4,6 +4,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -16,7 +17,8 @@ import android.widget.Toast;
 
 import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
 import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
-import com.arconus.newrelicpoc.fragments.PagerAdapter;
+import com.arconus.newrelicpoc.fragments.ApplicationsPagerAdapter;
+import com.arconus.newrelicpoc.fragments.ServersPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +51,7 @@ public class MainActivity extends FragmentActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the app.
-        mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "A ");
+        mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "A ");
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.content_frame);
@@ -147,15 +149,15 @@ public class MainActivity extends FragmentActivity {
         public void onItemClick(AdapterView parent, View view, int position, long id) {
             switch(position) {
                 case 0:
-                    mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "Applications ");
+                    mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Applications ");
                     break;
 
                 case 1:
-                    mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "Servers ");
+                    mSectionsPagerAdapter = new ServersPagerAdapter(getSupportFragmentManager(), "Servers ");
                     break;
 
                 case 2:
-                    mSectionsPagerAdapter = new PagerAdapter(getSupportFragmentManager(), "Key Transactions ");
+                    mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Key Transactions ");
                     break;
 
                 default:

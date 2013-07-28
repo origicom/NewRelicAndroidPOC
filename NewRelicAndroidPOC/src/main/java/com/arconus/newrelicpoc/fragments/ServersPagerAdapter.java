@@ -5,11 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class PagerAdapter extends FragmentStatePagerAdapter {
+public class ServersPagerAdapter extends FragmentStatePagerAdapter {
 
     private String prefix;
 
-    public PagerAdapter(FragmentManager fm, String prefix) {
+    public ServersPagerAdapter(FragmentManager fm, String prefix) {
         super(fm);
         this.prefix = prefix;
     }
@@ -20,7 +20,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         // Return a DummySectionFragment (defined as a static inner class
         // below) with the page number as its lone argument.
         if(position == 0) {
-            return new ApplicationsSelectionListFragment();
+            return new ServerSelectionListFragment();
         }
 
         Fragment fragment = new DummySectionFragment();
@@ -38,14 +38,14 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getItemPosition(Object object){
-        return PagerAdapter.POSITION_NONE;
+        return ServersPagerAdapter.POSITION_NONE;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "APPLICATIONS LIST";
+                return "SERVERS LIST";
             case 1:
                 return prefix + "SECTION 2";
             case 2:
