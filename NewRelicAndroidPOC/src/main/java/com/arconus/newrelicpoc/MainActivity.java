@@ -94,11 +94,11 @@ public class MainActivity extends FragmentActivity {
 
     private BaseAdapter createNavDrawerAdapter() {
         List<NavDrawerDataOrb> list = new ArrayList<NavDrawerDataOrb>();
-        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Applications", 43, 1, 1));
-        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Servers", 98, 5, 0));
-        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Key Transactions", 19, 4, 0));
-        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Mobile Applications", 1, 0, 0));
-        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Alerts", 2));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_applications, "Applications", 43, 1, 1));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_server, "Servers", 98, 5, 0));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_keytransactions, "Key Transactions", 19, 4, 0));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_mobile, "Mobile Applications", 1, 0, 0));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_alert, "Alerts", 2));
 
         return new NavDrawerListAdapter(this, R.layout.nav_drawer_list_item, list);
     }
