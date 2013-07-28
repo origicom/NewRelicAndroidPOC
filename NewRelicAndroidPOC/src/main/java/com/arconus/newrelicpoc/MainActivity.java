@@ -145,7 +145,8 @@ public class MainActivity extends FragmentActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView parent, View view, int position, long id) {
-            displayShortToast("Selected an item");
+            NavDrawerSelectionDialog dialog = new NavDrawerSelectionDialog();
+            dialog.show(getFragmentManager(), "SelectionList");
         }
     }
 }
