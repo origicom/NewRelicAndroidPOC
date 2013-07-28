@@ -7,17 +7,17 @@
 
     <TextView android:layout_width="8dp"
               android:layout_height="48dp"
-              android:id="@+id/ap_status_indicator"
+              android:id="@+id/sl_status_indicator"
               android:background="@color/NavDrawerGreen"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/ap_title"
+            android:id="@+id/sl_title"
             android:layout_gravity="left|center_vertical"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/ap_status_indicator"
+            android:layout_toRightOf="@id/sl_status_indicator"
             android:layout_marginLeft="8dp"
             android:textSize="18sp"/>
 
@@ -36,14 +36,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Response Time"
-                android:id="@+id/ap_response_time"
+                android:id="@+id/sl_minor_stat_top"
                 android:textSize="12sp"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/ap_error_rate"
+                android:id="@+id/sl_minor_stat_bottom"
                 android:textSize="12sp"/>
     </LinearLayout>
 

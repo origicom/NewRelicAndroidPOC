@@ -15,7 +15,7 @@ import com.arconus.newrelicpoc.adapters.EntitySelectionListDataOrb;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServerSelectionListFragment extends Fragment {
+public class KeyTransactionsSelectionListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,15 +28,14 @@ public class ServerSelectionListFragment extends Fragment {
     private BaseAdapter getAdapter() {
         List<EntitySelectionListDataOrb> list = new ArrayList<EntitySelectionListDataOrb>();
 
-        list.add(new EntitySelectionListDataOrb("nr-chi-acct-1", "CPU 10.0%", "RAM 29.1%", R.color.NavDrawerRed));
-        list.add(new EntitySelectionListDataOrb("chi-hudson", "CPU 1.3%", "RAM 19.1%", R.color.NavDrawerYellow));
-        list.add(new EntitySelectionListDataOrb("chi-staging-bg-2", "CPU 76%", "RAM 87%", R.color.NavDrawerYellow));
-        list.add(new EntitySelectionListDataOrb("nr-chi-acct-2", "CPU 20.6%", "RAM 30.1%", R.color.NavDrawerYellow));
-        list.add(new EntitySelectionListDataOrb("nr-chi-util", "CPU 1.3%", "RAM 18.4%", R.color.NavDrawerYellow));
-        list.add(new EntitySelectionListDataOrb("chi-beacon-1", "CPU 21.9%", "RAM 73%", R.color.NavDrawerGreen));
-        list.add(new EntitySelectionListDataOrb("chi-beacon-2", "CPU 18.9%", "RAM 72%", R.color.NavDrawerGreen));
-        list.add(new EntitySelectionListDataOrb("chi-hsp-1", "CPU 0.12%", "RAM 0.88%", R.color.NavDrawerGreen));
-
+        list.add(new EntitySelectionListDataOrb("App Breakdown Chart", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("App Dashboard", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("App Map", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("App Overview", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("CRM Page", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("Documentation - Categories", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("Event List Partial", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("Key Transaction Dashboard", R.color.NavDrawerGreen));
 
         return new EntitySelectionListAdapter(getActivity(), R.layout.selection_list_item, list);
     }

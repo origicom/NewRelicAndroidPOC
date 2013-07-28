@@ -2,14 +2,19 @@ package com.arconus.newrelicpoc.adapters;
 
 public class EntitySelectionListDataOrb {
     public String title;
-    public String responseTime;
-    public String errorPercentage;
+    public String minorStatTop;
+    public String minorStatBottom;
     public int statusColorID;
 
-    public EntitySelectionListDataOrb(String title, String responseTime, String errorPercentage, int statusColorID) {
+    public EntitySelectionListDataOrb(String title, String minorStatTop, String minorStatBottom, int statusColorID) {
         this.title = title;
-        this.responseTime = responseTime;
-        this.errorPercentage = errorPercentage;
+        this.minorStatTop = minorStatTop;
+        this.minorStatBottom = minorStatBottom;
+        this.statusColorID = statusColorID;
+    }
+
+    public EntitySelectionListDataOrb(String title, int statusColorID) {
+        this.title = title;
         this.statusColorID = statusColorID;
     }
 }

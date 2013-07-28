@@ -17,20 +17,20 @@ public EntitySelectionListAdapter(Context context, int resource, List<EntitySele
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-            View rowView = View.inflate(getContext(), R.layout.app_selection_list_item, null);
+            View rowView = View.inflate(getContext(), R.layout.selection_list_item, null);
 
         EntitySelectionListDataOrb dataOrb = getItem(position);
 
-        TextView title = (TextView) rowView.findViewById(R.id.ap_title);
+        TextView title = (TextView) rowView.findViewById(R.id.sl_title);
         title.setText(dataOrb.title);
 
-        TextView responseTime = (TextView) rowView.findViewById(R.id.ap_response_time);
-        responseTime.setText(dataOrb.responseTime);
+        TextView minorStatTop = (TextView) rowView.findViewById(R.id.sl_minor_stat_top);
+        minorStatTop.setText(dataOrb.minorStatTop);
 
-        TextView errorRate = (TextView) rowView.findViewById(R.id.ap_error_rate);
-        errorRate.setText(dataOrb.errorPercentage);
+        TextView minorStatBottom = (TextView) rowView.findViewById(R.id.sl_minor_stat_bottom);
+        minorStatBottom.setText(dataOrb.minorStatBottom);
 
-        TextView statusIndicator = (TextView) rowView.findViewById(R.id.ap_status_indicator);
+        TextView statusIndicator = (TextView) rowView.findViewById(R.id.sl_status_indicator);
         statusIndicator.setBackgroundColor(getContext().getResources().getColor(dataOrb.statusColorID));
 
         return rowView;

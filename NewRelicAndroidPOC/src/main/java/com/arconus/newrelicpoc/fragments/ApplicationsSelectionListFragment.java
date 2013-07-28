@@ -52,6 +52,6 @@ public class ApplicationsSelectionListFragment extends Fragment {
         list.add(new EntitySelectionListDataOrb("Storefront", "18.6ms", "0.00% errors", R.color.NavDrawerGreen));
         list.add(new EntitySelectionListDataOrb("System Uptime Dashboard", "414ms", "0.00% errors", R.color.NavDrawerGreen));
 
-        return new EntitySelectionListAdapter(getActivity(), R.layout.app_selection_list_item, list);
+        return new EntitySelectionListAdapter(getActivity(), R.layout.selection_list_item, list);
     }
 }

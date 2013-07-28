@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
 import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
 import com.arconus.newrelicpoc.fragments.ApplicationsPagerAdapter;
+import com.arconus.newrelicpoc.fragments.KeyTransactionsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.ServersPagerAdapter;
 
 import java.util.ArrayList;
@@ -157,7 +158,7 @@ public class MainActivity extends FragmentActivity {
                     break;
 
                 case 2:
-                    mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Key Transactions ");
+                    mSectionsPagerAdapter = new KeyTransactionsPagerAdapter(getSupportFragmentManager(), "Key Transactions ");
                     break;
 
                 default:
