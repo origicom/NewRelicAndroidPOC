@@ -33,6 +33,8 @@ public class ServerSelectionListFragment extends Fragment {
         list.add(new EntitySelectionListDataOrb("chi-staging-bg-2", "CPU 76%", "RAM 87%", R.color.NavDrawerYellow));
         list.add(new EntitySelectionListDataOrb("nr-chi-acct-2", "CPU 20.6%", "RAM 30.1%", R.color.NavDrawerYellow));
         list.add(new EntitySelectionListDataOrb("nr-chi-util", "CPU 1.3%", "RAM 18.4%", R.color.NavDrawerYellow));
+        list.add(new EntitySelectionListDataOrb("NR-Storage1", "CPU 0.58%", "RAM 0.58%", R.color.NavDrawerGreen));
+        list.add(new EntitySelectionListDataOrb("NR-Storage2", "CPU 0.55%", "RAM 3.4%", R.color.NavDrawerGreen));
         list.add(new EntitySelectionListDataOrb("chi-beacon-1", "CPU 21.9%", "RAM 73%", R.color.NavDrawerGreen));
         list.add(new EntitySelectionListDataOrb("chi-beacon-2", "CPU 18.9%", "RAM 72%", R.color.NavDrawerGreen));
         list.add(new EntitySelectionListDataOrb("chi-hsp-1", "CPU 0.12%", "RAM 0.88%", R.color.NavDrawerGreen));
