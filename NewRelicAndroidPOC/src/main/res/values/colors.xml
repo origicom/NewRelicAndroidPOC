@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="NewRelicTeal">#338597</color>
+    <color name="NavDrawerGreen">#75C92D</color>
+    <color name="NavDrawerYellow">#FFA71F</color>
+    <color name="NavDrawerRed">#D92032</color>
+    <color name="AlertGrey">#999999</color>
 </resources>

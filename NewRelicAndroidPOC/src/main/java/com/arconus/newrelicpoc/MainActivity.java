@@ -1,8 +1,5 @@
 package com.arconus.newrelicpoc;
 
-import java.util.Locale;
-
-
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -10,20 +7,25 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
+import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends FragmentActivity {
 
@@ -63,8 +65,7 @@ public class MainActivity extends FragmentActivity {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_list_item, new String[] {"Test1", "Test2", "Test3"}));
+        mDrawerList.setAdapter(createNavDrawerAdapter());
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
@@ -89,6 +90,17 @@ public class MainActivity extends FragmentActivity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+    }
+
+    private BaseAdapter createNavDrawerAdapter() {
+        List<NavDrawerDataOrb> list = new ArrayList<NavDrawerDataOrb>();
+        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Applications", 43, 1, 1));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Servers", 98, 5, 0));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Key Transactions", 19, 4, 0));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Mobile Applications", 1, 0, 0));
+        list.add(new NavDrawerDataOrb(R.drawable.ic_launcher, "Alerts", 2));
+
+        return new NavDrawerListAdapter(this, R.layout.nav_drawer_list_item, list);
     }
 
     @Override
