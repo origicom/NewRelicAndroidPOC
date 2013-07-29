@@ -18,6 +18,7 @@ import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
 import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
 import com.arconus.newrelicpoc.events.SelectionListItemSelectedEvent;
 import com.arconus.newrelicpoc.fragments.MobileAppPagerAdapter;
+import com.arconus.newrelicpoc.fragments.NothingSelectedPagerAdapter;
 import com.arconus.newrelicpoc.fragments.applications.ApplicationsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.keytransactions.KeyTransactionsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.servers.ServersPagerAdapter;
@@ -49,19 +50,15 @@ public class MainActivity extends FragmentActivity {
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mDrawerToggle;
     ListView mDrawerList;
-    private String mTitle;
+    private String mTitle = "New Relic";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mSectionsPagerAdapter = new NothingSelectedPagerAdapter(getSupportFragmentManager());
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the app.
-        mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "APPLICATIONS ");
-
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.content_frame);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
@@ -93,8 +90,6 @@ public class MainActivity extends FragmentActivity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
-
-        mDrawerLayout.openDrawer(mDrawerList);
     }
 
     private BaseAdapter createNavDrawerAdapter() {
