@@ -84,7 +84,6 @@ public class MainActivity extends FragmentActivity {
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle("Drawer title");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -94,6 +93,8 @@ public class MainActivity extends FragmentActivity {
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+
+        mDrawerLayout.openDrawer(mDrawerList);
     }
 
     private BaseAdapter createNavDrawerAdapter() {
@@ -154,18 +155,23 @@ public class MainActivity extends FragmentActivity {
             switch(position) {
                 case APPLICATIONS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "APPLICATIONS ");
+                    mTitle = "Applications";
                     break;
 
                 case SERVERS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new ServersPagerAdapter(getSupportFragmentManager(), "SERVERS ");
+                    mTitle = "Servers";
                     break;
 
                 case KEY_TRANSACTIONS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new KeyTransactionsPagerAdapter(getSupportFragmentManager(), "KEY TRANSACTIONS ");
+                    mTitle = "Key Transactions";
                     break;
 
                 case MOBILE_APPS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new MobileAppPagerAdapter(getSupportFragmentManager(), "MOBILE APPS ");
+                    mTitle = "Mobile Apps";
+                    break;
 
                 default:
                     break;
