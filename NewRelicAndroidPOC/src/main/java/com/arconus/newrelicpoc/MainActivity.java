@@ -13,12 +13,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
 import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
 import com.arconus.newrelicpoc.fragments.ApplicationsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.KeyTransactionsPagerAdapter;
+import com.arconus.newrelicpoc.fragments.MobileAppPagerAdapter;
 import com.arconus.newrelicpoc.fragments.ServersPagerAdapter;
 
 import java.util.ArrayList;
@@ -26,6 +26,10 @@ import java.util.List;
 
 public class MainActivity extends FragmentActivity {
 
+    public static final int APPLICATIONS_NAV_DRAWER_INDEX = 0;
+    public static final int SERVERS_NAV_DRAWER_INDEX = 1;
+    public static final int KEY_TRANSACTIONS_NAV_DRAWER_INDEX = 2;
+    public static final int MOBILE_APPS_NAV_DRAWER_INDEX = 3;
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -43,6 +47,7 @@ public class MainActivity extends FragmentActivity {
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mDrawerToggle;
     ListView mDrawerList;
+    private String mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +57,7 @@ public class MainActivity extends FragmentActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the app.
-        mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "A ");
+        mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Applications ");
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.content_frame);
@@ -71,7 +76,7 @@ public class MainActivity extends FragmentActivity {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
-                getActionBar().setTitle("Fragment title");
+                getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
@@ -141,25 +146,24 @@ public class MainActivity extends FragmentActivity {
         return true;
     }
 
-    public void displayShortToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView parent, View view, int position, long id) {
             switch(position) {
-                case 0:
+                case APPLICATIONS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Applications ");
                     break;
 
-                case 1:
+                case SERVERS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new ServersPagerAdapter(getSupportFragmentManager(), "Servers ");
                     break;
 
-                case 2:
+                case KEY_TRANSACTIONS_NAV_DRAWER_INDEX:
                     mSectionsPagerAdapter = new KeyTransactionsPagerAdapter(getSupportFragmentManager(), "Key Transactions ");
                     break;
+
+                case MOBILE_APPS_NAV_DRAWER_INDEX:
+                    mSectionsPagerAdapter = new MobileAppPagerAdapter(getSupportFragmentManager(), "Mobile Apps ");
 
                 default:
                     break;

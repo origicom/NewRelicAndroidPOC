@@ -5,11 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class KeyTransactionsPagerAdapter extends FragmentStatePagerAdapter {
+public class MobileAppPagerAdapter extends FragmentStatePagerAdapter {
 
     private String prefix;
 
-    public KeyTransactionsPagerAdapter(FragmentManager fm, String prefix) {
+    public MobileAppPagerAdapter(FragmentManager fm, String prefix) {
         super(fm);
         this.prefix = prefix;
     }
@@ -19,13 +19,10 @@ public class KeyTransactionsPagerAdapter extends FragmentStatePagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         // Return a DummySectionFragment (defined as a static inner class
         // below) with the page number as its lone argument.
-        if(position == 0) {
-            return new KeyTransactionsSelectionListFragment();
-        }
 
         Fragment fragment = new DummySectionFragment();
         Bundle args = new Bundle();
-        args.putString(DummySectionFragment.ARG_SECTION_NUMBER, prefix + (position + 1));
+        args.putString(DummySectionFragment.ARG_SECTION_NUMBER, "This feature isn't implemented since there isn't any screen shots available!");
         fragment.setArguments(args);
         return fragment;
     }
@@ -38,14 +35,14 @@ public class KeyTransactionsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getItemPosition(Object object){
-        return KeyTransactionsPagerAdapter.POSITION_NONE;
+        return MobileAppPagerAdapter.POSITION_NONE;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "LIST OF KEY TRANSACTIONS";
+                return "LIST OF MOBILE APPLICATIONS";
             case 1:
                 return prefix + "SECTION 2";
             case 2:

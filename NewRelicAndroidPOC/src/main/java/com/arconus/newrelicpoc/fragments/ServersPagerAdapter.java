@@ -45,7 +45,7 @@ public class ServersPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "SERVERS LIST";
+                return "LIST OF SERVERS";
             case 1:
                 return prefix + "SECTION 2";
             case 2:

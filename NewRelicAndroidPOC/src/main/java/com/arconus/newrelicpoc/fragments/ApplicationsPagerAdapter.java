@@ -45,7 +45,7 @@ public class ApplicationsPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "APPLICATIONS LIST";
+                return "LIST OF APPLICATIONS";
             case 1:
                 return prefix + "SECTION 2";
             case 2:
