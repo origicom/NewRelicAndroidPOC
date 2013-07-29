@@ -16,10 +16,12 @@ import android.widget.ListView;
 
 import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
 import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
+import com.arconus.newrelicpoc.events.SelectionListItemSelectedEvent;
 import com.arconus.newrelicpoc.fragments.MobileAppPagerAdapter;
 import com.arconus.newrelicpoc.fragments.applications.ApplicationsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.keytransactions.KeyTransactionsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.servers.ServersPagerAdapter;
+import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -173,5 +175,22 @@ public class MainActivity extends FragmentActivity {
             mDrawerList.setItemChecked(position, true);
             mDrawerLayout.closeDrawer(mDrawerList);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Application.bus.register(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Application.bus.unregister(this);
+    }
+
+    @Subscribe
+    public void answerSelectionListItemSelectedEvent(SelectionListItemSelectedEvent event) {
+        mViewPager.setCurrentItem(1);
     }
 }
