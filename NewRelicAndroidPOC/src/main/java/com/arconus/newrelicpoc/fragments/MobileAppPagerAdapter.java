@@ -30,7 +30,7 @@ public class MobileAppPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         // Show 3 total pages.
-        return 3;
+        return 2;
     }
 
     @Override
@@ -44,9 +44,7 @@ public class MobileAppPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return "LIST OF MOBILE APPLICATIONS";
             case 1:
-                return prefix + "SECTION 2";
-            case 2:
-                return prefix + "SECTION 3";
+                return prefix + "DASHBOARD";
         }
         return null;
     }

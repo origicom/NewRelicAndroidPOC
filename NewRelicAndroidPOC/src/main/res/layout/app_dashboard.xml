@@ -35,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="194 ms"
-                    android:id="@+id/big_stat"
+                    android:id="@+id/dash_big_stat"
                     android:textSize="40sp"
                     android:layout_below="@id/dash_big_stat_title"/>
 
@@ -45,7 +45,7 @@
                     android:text="AVG RESPONSE TIME"
                     android:id="@+id/dash_big_stat_desc"
                     android:textSize="10sp"
-                    android:layout_below="@id/big_stat"/>
+                    android:layout_below="@+id/dash_big_stat"/>
 
             <TextView
                     android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
                     android:textSize="20sp"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="16dp"
-                    android:layout_alignTop="@id/big_stat"/>
+                    android:layout_alignTop="@+id/dash_big_stat"/>
 
             <TextView
                     android:layout_width="wrap_content"

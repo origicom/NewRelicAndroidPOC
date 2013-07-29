@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.arconus.newrelicpoc.fragments.DummySectionFragment;
+import com.arconus.newrelicpoc.fragments.applications.ApplicationsDashboardFragment;
 
 public class ServersPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -24,6 +25,9 @@ public class ServersPagerAdapter extends FragmentStatePagerAdapter {
         if(position == 0) {
             return new ServerSelectionListFragment();
         }
+        if(position == 1) {
+            return new ApplicationsDashboardFragment();
+        }
 
         Fragment fragment = new DummySectionFragment();
         Bundle args = new Bundle();
@@ -34,8 +38,7 @@ public class ServersPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        return 2;
     }
 
     @Override
@@ -49,9 +52,7 @@ public class ServersPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return "LIST OF SERVERS";
             case 1:
-                return prefix + "SECTION 2";
-            case 2:
-                return prefix + "SECTION 3";
+                return "DASHBOARD";
         }
         return null;
     }

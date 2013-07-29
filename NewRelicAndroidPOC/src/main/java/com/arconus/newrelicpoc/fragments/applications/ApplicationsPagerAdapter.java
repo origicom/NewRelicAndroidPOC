@@ -37,8 +37,7 @@ public class ApplicationsPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        return 2;
     }
 
     @Override
@@ -52,9 +51,7 @@ public class ApplicationsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return "LIST OF APPLICATIONS";
             case 1:
-                return prefix + "DASHBOARD";
-            case 2:
-                return prefix + "SECTION 3";
+                return "DASHBOARD";
         }
         return null;
     }
