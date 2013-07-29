@@ -1,4 +1,4 @@
-package com.arconus.newrelicpoc.fragments;
+package com.arconus.newrelicpoc.fragments.servers;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

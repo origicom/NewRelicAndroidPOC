@@ -1,9 +1,11 @@
-package com.arconus.newrelicpoc.fragments;
+package com.arconus.newrelicpoc.fragments.applications;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.arconus.newrelicpoc.fragments.DummySectionFragment;
 
 public class ApplicationsPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -21,6 +23,9 @@ public class ApplicationsPagerAdapter extends FragmentStatePagerAdapter {
         // below) with the page number as its lone argument.
         if(position == 0) {
             return new ApplicationsSelectionListFragment();
+        }
+        if(position == 1) {
+            return new ApplicationsDashboardFragment();
         }
 
         Fragment fragment = new DummySectionFragment();
@@ -47,7 +52,7 @@ public class ApplicationsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return "LIST OF APPLICATIONS";
             case 1:
-                return prefix + "SECTION 2";
+                return prefix + "DASHBOARD";
             case 2:
                 return prefix + "SECTION 3";
         }

@@ -1,15 +1,17 @@
-package com.arconus.newrelicpoc.fragments;
+package com.arconus.newrelicpoc.fragments.keytransactions;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class ServersPagerAdapter extends FragmentStatePagerAdapter {
+import com.arconus.newrelicpoc.fragments.DummySectionFragment;
+
+public class KeyTransactionsPagerAdapter extends FragmentStatePagerAdapter {
 
     private String prefix;
 
-    public ServersPagerAdapter(FragmentManager fm, String prefix) {
+    public KeyTransactionsPagerAdapter(FragmentManager fm, String prefix) {
         super(fm);
         this.prefix = prefix;
     }
@@ -20,7 +22,7 @@ public class ServersPagerAdapter extends FragmentStatePagerAdapter {
         // Return a DummySectionFragment (defined as a static inner class
         // below) with the page number as its lone argument.
         if(position == 0) {
-            return new ServerSelectionListFragment();
+            return new KeyTransactionsSelectionListFragment();
         }
 
         Fragment fragment = new DummySectionFragment();
@@ -38,14 +40,14 @@ public class ServersPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getItemPosition(Object object){
-        return ServersPagerAdapter.POSITION_NONE;
+        return KeyTransactionsPagerAdapter.POSITION_NONE;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "LIST OF SERVERS";
+                return "LIST OF KEY TRANSACTIONS";
             case 1:
                 return prefix + "SECTION 2";
             case 2:

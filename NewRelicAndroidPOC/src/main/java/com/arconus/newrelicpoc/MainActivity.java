@@ -16,10 +16,10 @@ import android.widget.ListView;
 
 import com.arconus.newrelicpoc.adapters.NavDrawerDataOrb;
 import com.arconus.newrelicpoc.adapters.NavDrawerListAdapter;
-import com.arconus.newrelicpoc.fragments.ApplicationsPagerAdapter;
-import com.arconus.newrelicpoc.fragments.KeyTransactionsPagerAdapter;
 import com.arconus.newrelicpoc.fragments.MobileAppPagerAdapter;
-import com.arconus.newrelicpoc.fragments.ServersPagerAdapter;
+import com.arconus.newrelicpoc.fragments.applications.ApplicationsPagerAdapter;
+import com.arconus.newrelicpoc.fragments.keytransactions.KeyTransactionsPagerAdapter;
+import com.arconus.newrelicpoc.fragments.servers.ServersPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +57,7 @@ public class MainActivity extends FragmentActivity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the app.
-        mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Applications ");
+        mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "APPLICATIONS ");
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.content_frame);
@@ -151,19 +151,19 @@ public class MainActivity extends FragmentActivity {
         public void onItemClick(AdapterView parent, View view, int position, long id) {
             switch(position) {
                 case APPLICATIONS_NAV_DRAWER_INDEX:
-                    mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "Applications ");
+                    mSectionsPagerAdapter = new ApplicationsPagerAdapter(getSupportFragmentManager(), "APPLICATIONS ");
                     break;
 
                 case SERVERS_NAV_DRAWER_INDEX:
-                    mSectionsPagerAdapter = new ServersPagerAdapter(getSupportFragmentManager(), "Servers ");
+                    mSectionsPagerAdapter = new ServersPagerAdapter(getSupportFragmentManager(), "SERVERS ");
                     break;
 
                 case KEY_TRANSACTIONS_NAV_DRAWER_INDEX:
-                    mSectionsPagerAdapter = new KeyTransactionsPagerAdapter(getSupportFragmentManager(), "Key Transactions ");
+                    mSectionsPagerAdapter = new KeyTransactionsPagerAdapter(getSupportFragmentManager(), "KEY TRANSACTIONS ");
                     break;
 
                 case MOBILE_APPS_NAV_DRAWER_INDEX:
-                    mSectionsPagerAdapter = new MobileAppPagerAdapter(getSupportFragmentManager(), "Mobile Apps ");
+                    mSectionsPagerAdapter = new MobileAppPagerAdapter(getSupportFragmentManager(), "MOBILE APPS ");
 
                 default:
                     break;
