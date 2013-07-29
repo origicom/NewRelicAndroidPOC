@@ -193,5 +193,7 @@ public class MainActivity extends FragmentActivity {
     @Subscribe
     public void answerSelectionListItemSelectedEvent(SelectionListItemSelectedEvent event) {
         mViewPager.setCurrentItem(1);
+        mTitle = event.dataOrb.title;
+        getActionBar().setTitle(mTitle);
     }
 }
