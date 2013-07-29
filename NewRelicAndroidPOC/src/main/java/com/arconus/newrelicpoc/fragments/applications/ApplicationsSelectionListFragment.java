@@ -5,16 +5,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.arconus.newrelicpoc.Application;
 import com.arconus.newrelicpoc.R;
+import com.arconus.newrelicpoc.SelectionListItemClickListener;
 import com.arconus.newrelicpoc.adapters.EntitySelectionListAdapter;
 import com.arconus.newrelicpoc.adapters.EntitySelectionListDataOrb;
-import com.arconus.newrelicpoc.events.SelectionListItemSelectedEvent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,15 +23,7 @@ public class ApplicationsSelectionListFragment extends Fragment {
         View v = inflater.inflate(R.layout.list_selection_layout, null);
         ListView listView = (ListView) v.findViewById(R.id.listView);
         listView.setAdapter(getAdapter());
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                EntitySelectionListDataOrb dataOrb = (EntitySelectionListDataOrb) parent.getItemAtPosition(position);
-                Toast.makeText(getActivity(), "Item Selected: " + dataOrb.title, Toast.LENGTH_SHORT).show();
-                Application.bus.post(new SelectionListItemSelectedEvent(dataOrb));
-            }
-        });
-
+        listView.setOnItemClickListener(new SelectionListItemClickListener());
         return v;
     }
 

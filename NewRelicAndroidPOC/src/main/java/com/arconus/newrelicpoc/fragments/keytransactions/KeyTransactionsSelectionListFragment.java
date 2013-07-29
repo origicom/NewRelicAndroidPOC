@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.arconus.newrelicpoc.R;
+import com.arconus.newrelicpoc.SelectionListItemClickListener;
 import com.arconus.newrelicpoc.adapters.EntitySelectionListAdapter;
 import com.arconus.newrelicpoc.adapters.EntitySelectionListDataOrb;
 
@@ -22,6 +23,7 @@ public class KeyTransactionsSelectionListFragment extends Fragment {
         View v = inflater.inflate(R.layout.list_selection_layout, null);
         ListView listView = (ListView) v.findViewById(R.id.listView);
         listView.setAdapter(getAdapter());
+        listView.setOnItemClickListener(new SelectionListItemClickListener());
         return v;
     }
 
