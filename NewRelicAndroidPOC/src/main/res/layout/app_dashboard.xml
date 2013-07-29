@@ -6,18 +6,104 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
                 android:text="Awesome chart goes here!"
-                android:id="@+id/textView"
+                android:id="@+id/dash_chart_placeholder"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="26sp"/>
+                android:textSize="26sp"
+                android:background="@color/AlertGrey"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="16dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="APP SERVER"
+                    android:id="@+id/dash_big_stat_title"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="194 ms"
+                    android:id="@+id/big_stat"
+                    android:textSize="40sp"
+                    android:layout_below="@id/dash_big_stat_title"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AVG RESPONSE TIME"
+                    android:id="@+id/dash_big_stat_desc"
+                    android:textSize="10sp"
+                    android:layout_below="@id/big_stat"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.02%"
+                    android:id="@+id/dash_small_upper_right_stat"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignTop="@id/big_stat"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ERRORS"
+                    android:id="@+id/dash_small_upper_right_desc"
+                    android:textSize="10sp"
+                    android:layout_below="@id/dash_small_upper_right_stat"
+                    android:layout_alignLeft="@id/dash_small_upper_right_stat"/>
 
 
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.94"
+                    android:id="@+id/dash_small_upper_left_stat"
+                    android:textSize="20sp"
+                    android:layout_toLeftOf="@id/dash_small_upper_right_stat"
+                    android:layout_alignTop="@id/dash_small_upper_right_stat"
+                    android:layout_marginRight="32dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="APDEX"
+                    android:id="@+id/dash_small_upper_left_desc"
+                    android:textSize="10sp"
+                    android:layout_below="@id/dash_small_upper_left_stat"
+                    android:layout_alignLeft="@id/dash_small_upper_left_stat"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9,450"
+                    android:id="@+id/dash_small_bottom_stat"
+                    android:textSize="20sp"
+                    android:layout_alignLeft="@id/dash_small_upper_left_stat"
+                    android:layout_below="@id/dash_small_upper_left_desc"
+                    android:layout_marginTop="16dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THROUGHPUT"
+                    android:id="@+id/dash_small_bottom_desc"
+                    android:textSize="10sp"
+                    android:layout_below="@id/dash_small_bottom_stat"
+                    android:layout_alignLeft="@id/dash_small_bottom_stat"/>
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>
